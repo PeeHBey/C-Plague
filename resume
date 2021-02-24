@@ -1,0 +1,42 @@
+4 catégories de citoyens : Médecins / Pompiers / Journalistes / Randoms
+
+* Citoyens :
+	->un déplacement par tour (60% reste sur place, 40% déplacement aléatoire sur 8 cases)
+	->tx de contamination entre 0 et 1
+	->+2% du lieu où il arrive, +5% si sur place
+	->arriver sur un lieu augmente son niveau de contamination de 1% celui du citoyen
+	->par tour, risque de tomber malade = tx de contamination
+	->5j malade = mort (5% puis 10% etc...)
+	->un malade ou un cadavre a 10% de chance de contaminer les autres citoyens du lieu
+	->sur un terrain vague, 1% sur terrains vagues voisins
+
+* Médecins : 
+	->commence avec 5 pochettes de soin si en dehors d'un hopital
+	->rentrer dans un hopital lui en redonne 10
+	->un seul soin par jour (le plus infecté si conflit)
+	->ne peut pas soigner s'il est lui-même infecté
+	->peut se soigner si infecté depuis - de 10 jours
+	->l'hopital dispense de pochette de soins
+	->a accès aux hopitaux tous les deux jours
+
+* Pompiers :
+	->décontamine les personnes et les lieux & brûle les morts
+	->brûlure auto en entrant sur une case
+	->-20% max de contamination par habitant sur sa case (puis le lieu)
+	->décontamine de 100% max par tour
+	->commence avec un pulvérisateur à 500/1000 
+	->contamination 10* plus lente
+	->70% de chance d'esquiver une contamination
+
+* Journalistes : 
+	->transmettent dépêches selon importance :
+		°tx contamination perso (1)
+		°nb total de contaminés (2)
+		°niveau moyen de contamination (5)
+		°nb de morts (10)
+	->ces infos seront stockées dans une structure mémoire accessible à tous
+
+
+
+
+4 types de case : maison / caserne / hôpial / terrain vague
